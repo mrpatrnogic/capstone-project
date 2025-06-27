@@ -1,9 +1,9 @@
 import { HStack, VStack, Stack, Heading, Button } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import DishCard from './DishCard';
-import photo1 from '../images/photo1.jpg'
-import photo2 from '../images/photo2.svg'
-import photo3 from '../images/photo3.jpg'
+import photo1 from '../Images/photo1.jpg'
+import photo2 from '../Images/photo2.svg'
+import photo3 from '../Images/photo3.jpg'
 
 const HighlightsSection = (props) => {
     const dishes = [

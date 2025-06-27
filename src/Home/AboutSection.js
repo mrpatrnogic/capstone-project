@@ -1,6 +1,6 @@
 import { VStack, Image, Stack, Text, Heading, Box } from '@chakra-ui/react';
-import about1 from '../images/about1.jpg'
-import about2 from '../images/about2.jpg'
+import about1 from '../Images/about1.jpg'
+import about2 from '../Images/about2.jpg'
 
 const AboutSection = () => {
     return (

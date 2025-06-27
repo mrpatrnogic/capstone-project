@@ -1,9 +1,9 @@
 import { Heading, VStack, Stack } from "@chakra-ui/react";
 import TestimonialCard from "./TestimonialCard";
-import face1 from "../images/face1.png"
-import face2 from "../images/face2.png"
-import face3 from "../images/face3.png"
-import face4 from "../images/face4.png"
+import face1 from "../Images/face1.png"
+import face2 from "../Images/face2.png"
+import face3 from "../Images/face3.png"
+import face4 from "../Images/face4.png"
 
 const TestimonialsSection = () => {
     const testimonials = [

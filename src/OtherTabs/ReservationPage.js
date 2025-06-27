@@ -1,14 +1,19 @@
-import { Heading } from '@chakra-ui/react';
+import { Heading, Box } from '@chakra-ui/react';
+
 import Header from '../SemanticComponents/Header';
 import Footer from '../SemanticComponents/Footer';
+import BookingForm from '../Reservations/BookingForm';
 
 const ReservationPage = () => {
     return (
-        <div>
+        <Box>
             <Header />
-            <Heading textAlign="center">Reservations</Heading>
+            <Box p={8}>
+                <Heading textAlign="center">Reservations</Heading>
+                <BookingForm />
+            </Box>
             <Footer />
-        </div>
+        </Box>
     )
 }
 

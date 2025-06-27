@@ -1,6 +1,6 @@
 import { Container, HStack, VStack, Image, Button, Text, Heading } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import image from '../images/home_hero.jpg'
+import image from '../Images/home_hero.jpg'
 
 const HeroSection = () => {
     return (
