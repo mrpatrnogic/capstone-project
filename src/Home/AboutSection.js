@@ -1,4 +1,4 @@
-import { Container, HStack, VStack, Image, Stack, Text, Heading, Box } from '@chakra-ui/react';
+import { VStack, Image, Stack, Text, Heading, Box } from '@chakra-ui/react';
 import about1 from '../images/about1.jpg'
 import about2 from '../images/about2.jpg'
 

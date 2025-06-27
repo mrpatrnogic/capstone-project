@@ -1,17 +1,16 @@
-import { Stack, Link } from '@chakra-ui/react';
-import React from 'react';
-
+import { Link as ChakraLink, Stack } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 const Nav = (props) => {
     return (
         <nav>
             <Stack direction={{base:'column', md: props.direction}}>
                 {props.children}
-                <Link href="#home" p={2}>Home</Link>
-                <Link href="#about" p={2}>About</Link>
-                <Link href="#menu" p={2}>Menu</Link>
-                <Link href="#reservations" p={2}>Reservations</Link>
-                <Link href="#order" p={2}>Order Online</Link>
-                <Link href="#login" p={2}>Login</Link>
+                <ChakraLink as={RouterLink} to="/" p={2}>Home</ChakraLink>
+                <ChakraLink as={RouterLink} to="/about" p={2}>About</ChakraLink>
+                <ChakraLink as={RouterLink} to="/menu" p={2}>Menu</ChakraLink>
+                <ChakraLink as={RouterLink} to="/reservations" p={2}>Reservations</ChakraLink>
+                <ChakraLink as={RouterLink} to="/order" p={2}>Order Online</ChakraLink>
+                <ChakraLink as={RouterLink} to="/login" p={2}>Login</ChakraLink>
             </Stack>
         </nav>
     )

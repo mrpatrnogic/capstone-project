@@ -1,4 +1,5 @@
 import { Container, HStack, VStack, Image, Button, Text, Heading } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 import image from '../images/home_hero.jpg'
 
 const HeroSection = () => {
@@ -15,7 +16,7 @@ const HeroSection = () => {
                     <Text fontSize="lg" mb={4}>
                         We blend Mediterranean tradition with modern flair. Each dish is a work of art, crafted with locally sourced ingredients and a passion for gastronomy. Enjoy an unforgettable culinary experience in a warm and inviting atmosphere.
                     </Text>
-                    <Button>Reserve a table</Button>
+                    <Button  as={RouterLink} to="/reservations">Reserve a table</Button>
                 </VStack>
                 <Image
                     src={image}

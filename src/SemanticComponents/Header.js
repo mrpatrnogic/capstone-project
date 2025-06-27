@@ -1,7 +1,6 @@
-import React from 'react';
 import logo from '.././Logo.svg';
 import Nav from './Nav';
-import { Container, Stack } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 
 const Header = () => {
     return (

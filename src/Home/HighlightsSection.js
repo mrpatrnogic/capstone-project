@@ -1,4 +1,5 @@
-import { HStack, VStack, Stack, Heading, Button, Container } from '@chakra-ui/react';
+import { HStack, VStack, Stack, Heading, Button } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 import DishCard from './DishCard';
 import photo1 from '../images/photo1.jpg'
 import photo2 from '../images/photo2.svg'
@@ -34,7 +35,7 @@ const HighlightsSection = (props) => {
         <VStack px={100} py={10} spacing={10} width="70%">
             <HStack justify="space-between" width="100%">
                 <Heading fontWeight="bold" letterSpacing="wide">Specials</Heading>
-                <Button>Online Menu</Button>
+                <Button as={RouterLink} to="/menu">Online Menu</Button>
             </HStack>
             <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
                 {dishes.map((dish, index) => (

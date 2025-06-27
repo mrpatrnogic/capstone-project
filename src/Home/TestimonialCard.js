@@ -1,6 +1,6 @@
 import { HStack, VStack, Image, Text, Icon, Heading } from "@chakra-ui/react";
 import Rating from "react-rating";
-import { FaStar, FaStarHalfAlt, FaRegStar} from "react-icons/fa";
+import { FaStar, FaRegStar} from "react-icons/fa";
 
 const TestimonialCard = ({rating, photoSrc, name, review}) => {
     return (
