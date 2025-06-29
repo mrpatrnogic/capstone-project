@@ -1,9 +1,14 @@
 import { useFormik } from "formik";
 import { Container, FormControl, FormLabel, FormErrorMessage, Input, VStack, Select, Button } from "@chakra-ui/react";
 import * as Yup from 'yup';
+import { useBookingContext } from "./BookingProvider";
+import React from "react";
 
 const BookingForm = () => {
     const isLoading = false
+
+    const {registerBooking, getAvailableTimeslots} = useBookingContext()
+
     const formik = useFormik({
         initialValues: {
         date: '',
@@ -12,7 +17,8 @@ const BookingForm = () => {
         occasion: ''
         },
         onSubmit:async (values) => {
-        //await submit("", values)
+            registerBooking(values.date, values.time)
+            formik.resetForm();
         },
         validationSchema: Yup.object({
         date: Yup
@@ -22,7 +28,8 @@ const BookingForm = () => {
         time: Yup
             .string()
             .oneOf(['1700', '1800', '1900', '2000', '2100', '2200'], 'Select a time')
-            .required('Required'),
+            .required('Required')
+            .notOneOf([''], 'Required'),
 
         numberOfGuests: Yup
             .number()
@@ -36,6 +43,13 @@ const BookingForm = () => {
         }),
     });
 
+    const [timeslots, setTimeslots] = React.useState(getAvailableTimeslots());
+
+    const onDateChange = (e) => {
+        setTimeslots(getAvailableTimeslots(e.target.value))
+        formik.handleChange(e)
+    }
+
     return (
         <Container p={6} rounded="md" w="100%" alignItems="center" maxWidth="2xl">
           <form onSubmit={formik.handleSubmit}>
@@ -46,7 +60,7 @@ const BookingForm = () => {
                   id="date"
                   name="date"
                   type="date"
-                  onChange={formik.handleChange}
+                  onChange={onDateChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.date}
                 />
@@ -59,15 +73,12 @@ const BookingForm = () => {
                   name="time" 
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  value={formik.values.type}
-                  placeholder="Choose a time.."
+                  value={formik.values.time}
+                  placeholder='Choose a time..'
                 >
-                  <option value="1700">17:00</option>
-                  <option value="1800">18:00</option>
-                  <option value="1900">19:00</option>
-                  <option value="2000">20:00</option>
-                  <option value="2100">21:00</option>
-                  <option value="2200">22:00</option>
+                  {timeslots.map(timeslot => {
+                    return <option key={timeslot} value={timeslot}>{timeslot}</option>
+                  })}
                 </Select>
                 <FormErrorMessage>{formik.errors.time}</FormErrorMessage>
               </FormControl>
